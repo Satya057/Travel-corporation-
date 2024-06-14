@@ -1,0 +1,121 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.group-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-details {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.group-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  min-width: 80px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  margin-right: 10px;
+}
+
+.group-inputs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+}
+
+.show-status {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.status-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap; /* Prevent line wrapping */
+  position: relative;
+}
+
+.status-item {
+  display: inline-block; /* Ensure items are inline */
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  min-width: 70px;
+  text-align: center; /* Center-align the text in each box */
+}
+
+.check-icon {
+  color: green;
+  margin-left: 10px;
+}
+
+.add-group {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.group-inputs label {
+  margin-right: 5px;
+  white-space: nowrap; /* Ensure labels don't wrap */
+}
+
+.group-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.arrow-icon {
+  margin: 0 5px;
+}
+
+.group-content {
+  width: 100%;
+}
