@@ -1,6 +1,6 @@
-/* Base styles */
+/* General styles */
 .app-container {
-  max-width: 800px;
+  max-width: 70%; /* Changed from a fixed max-width to a percentage */
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -8,21 +8,32 @@
 
 h1 {
   text-align: center;
+  color: #333;
 }
 
+/* Group list styles */
 .group-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Group container styles */
 .group-container {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
-  position: relative;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.group-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Group content styles */
 .group-content {
   display: flex;
   justify-content: space-between;
@@ -59,11 +70,28 @@ h1 {
 input[type="number"] {
   width: 50px;
   padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Button styles */
+.show-status, .add-group {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .show-status {
-  padding: 5px 10px;
-  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.show-status:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 .show-status:disabled {
@@ -71,26 +99,74 @@ input[type="number"] {
   cursor: not-allowed;
 }
 
+.show-status.disabled .tooltip {
+  visibility: hidden;
+}
+
+.add-group {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-group:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Tooltip styles */
+.show-status .tooltip {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 200px;
+}
+
+.show-status .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.show-status.disabled:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Status list styles */
 .status-list {
   display: flex;
   align-items: center;
   gap: 5px;
-  background: #f9f9f9;
+  background: #f1f1f1;
   padding: 10px;
   border-radius: 5px;
-  white-space: nowrap; /* Prevent line wrapping */
   position: relative;
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  overflow-x: auto;
 }
 
 .status-item {
-  display: inline-block; /* Ensure items are inline */
+  display: inline-block;
   padding: 5px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 3px;
   min-width: 70px;
-  text-align: center; /* Center-align the text in each box */
+  text-align: center;
 }
 
 .check-icon {
@@ -98,38 +174,12 @@ input[type="number"] {
   margin-left: 10px;
 }
 
-.add-group {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.group-inputs label {
-  margin-right: 5px;
-  white-space: nowrap; /* Ensure labels don't wrap */
-}
-
-.group-details {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-.arrow-icon {
-  margin: 0 5px;
-}
-
-.group-content {
-  width: 100%;
-}
-
+/* Error message styles */
 .error-message {
   color: red;
   margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Responsive styles */
