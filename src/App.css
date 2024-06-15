@@ -1,3 +1,4 @@
+/* Base styles */
 .app-container {
   max-width: 800px;
   margin: 0 auto;
@@ -65,6 +66,11 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.show-status:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .status-list {
   display: flex;
   align-items: center;
@@ -74,6 +80,7 @@ input[type="number"] {
   border-radius: 5px;
   white-space: nowrap; /* Prevent line wrapping */
   position: relative;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
 
 .status-item {
@@ -118,4 +125,107 @@ input[type="number"] {
 
 .group-content {
   width: 100%;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+/* Responsive styles */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .group-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .group-details {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .group-label, .group-inputs {
+    margin-right: 0;
+  }
+
+  .group-inputs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .status-list {
+    padding: 5px;
+  }
+
+  .status-item {
+    min-width: 60px;
+    padding: 3px;
+  }
+
+  .add-group, .show-status {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .group-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .group-details {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .group-label, .group-inputs {
+    margin-right: 0;
+  }
+
+  .group-inputs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .status-list {
+    padding: 5px;
+  }
+
+  .status-item {
+    min-width: 60px;
+    padding: 3px;
+  }
+
+  .add-group, .show-status {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .group-details {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .group-inputs {
+    justify-content: flex-start;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .group-details {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .group-inputs {
+    justify-content: flex-start;
+  }
 }
